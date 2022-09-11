@@ -22,12 +22,10 @@ const Contact = () => {
                 </Link>
             </div>
             <div className="phone">
-            <div className="mail">
                 <img src={phone} alt="phone" width={100} height={100}></img>
-                <Link href="tel:+496170961709" underline="none">
-                {'Call me, anytime +48 451 552 506'}
-                </Link>
-            </div>
+                  <Link href="tel:+496170961709" underline="none">
+                  {'Call me, anytime +48 451 552 506'}
+                  </Link>  
             </div>
         </div>
         <div style={{textAlign: 'center'}}>
@@ -62,6 +60,7 @@ const styles = {
       contacts: {
         display: 'flex',
         justifyContent: 'space-between',
-        padding: 40
+        padding: 40,
+        columnGap: 20
       }
 }

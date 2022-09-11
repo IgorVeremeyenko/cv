@@ -1,42 +1,56 @@
 import { ImageProfile } from "../ImageProfile";
-import { MyDivider } from "../MyDivider";
-import Link from '@mui/material/Link';
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { useState } from 'react';
-
-const darkTheme = createTheme({ palette: { mode: 'dark' } });
-const lightTheme = createTheme({ palette: { mode: 'light' } });
+import {
+    faFacebook,
+    faInstagram,
+    faLinkedin
+  } from "@fortawesome/free-brands-svg-icons";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const LeftSideMenu = () => {
-    // const [isHover, setIsHover] = useState(0);
-    // const [bcgrnd, setBcgrnd] = useState('#FFFAF0');
-    
-    //  const handleMouseEnter = () => {
-    //     setIsHover(15);
-    //     setBcgrnd('white');
-    //  };
-    //  const handleMouseLeave = () => {
-    //     setBcgrnd('#FFFAF0');
-    //     setIsHover(0);
-    //  };
-    // const Item = styled(Paper)(({ theme }) => ({
-    //     ...theme.typography.body2,
-    //     textAlign: 'center',
-    //     color: theme.palette.text.secondary,
-    //     height: 60,
-    //     lineHeight: '60px',
-    //   }));
-    //   const strings = ['ABOUT ME', 'RESUME', 'PORTFOLIO', 'CONTACT']
+    const [color1, setColor1] = useState('#333333');
+    const [color2, setColor2] = useState('#333333');
+    const [color3, setColor3] = useState('#333333');
+    const changeColor1 = () => {
+       setColor1('blue');
+    }
+    const changeColor2 = () => {
+        setColor2('blue');
+    }
+    const changeColor3 = () => {
+        setColor3('blue');
+    }
+    const resetColor = () => {
+        setColor1('#333333');
+        setColor2('#333333');
+        setColor3('#333333');
+    }
+   
     return (
         <div className="container">
             <div className="photo" style={styles.photo}>
                 <ImageProfile />
             </div>
-            
+            <div className="social">
+                <h3>Social Follow</h3>
+                <div class="social-container">                
+                    <a href="https://www.facebook.com/profile.php?id=100008083928382"
+                        className="facebook social" target="_blank">
+                        <FontAwesomeIcon icon={faFacebook} size="2x" color={color1} onMouseEnter={changeColor1} onMouseLeave={resetColor}/>
+                        
+                    </a>
+                    <a href="https://www.instagram.com/igor_veremeyenko/"
+                        className="instagram social" target="_blank">
+                        <FontAwesomeIcon icon={faInstagram} size="2x" color={color2} onMouseEnter={changeColor2} onMouseLeave={resetColor}/>
+                        
+                    </a>
+                    <a href="https://www.linkedin.com/in/igorveremiienko"
+                        className="linkedin social" target="_blank">
+                        <FontAwesomeIcon icon={faLinkedin} size="2x" color={color3} onMouseEnter={changeColor3} onMouseLeave={resetColor}/>
+                    </a>
+                </div>
+            </div>
         </div>
     )
 }

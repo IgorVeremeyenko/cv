@@ -3,8 +3,6 @@ import { Menu } from './components/Menu';
 import { Box, Paper } from '@mui/material';
 import Image from './assets/img/background-image.jpg';
 import MyRoutes from './components/MyRoutes';
-import Header from './components/pages/Header';
-import Footer from './components/pages/Footer';
 
 function App() {
   
