@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { StartPage } from './components/pages/StartPage';
+import { Menu } from './components/Menu';
+import { Box, Paper } from '@mui/material';
+import Image from './assets/img/background-image.jpg';
+import MyRoutes from './components/MyRoutes';
+import Header from './components/pages/Header';
+import Footer from './components/pages/Footer';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    
+    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <MyRoutes/>
+      {/* <Paper sx={{ background: `url(${Image})`, height: '100vh', position: 'fixed', backgroundRepeat: 'round', width: '100%', top: 0, zIndex: -10 }}>
+      </Paper> */}
+      {/* <Menu /> */}
+    </Box>
+  )
 }
 
 export default App;
