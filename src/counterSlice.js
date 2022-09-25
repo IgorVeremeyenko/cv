@@ -5,7 +5,8 @@ export const counterSlice = createSlice({
   initialState: {
     value: 0,
     width: false,
-    isVisible: false
+    isVisible: false,
+    theme: 'light'
   },
   reducers: {
     increment: (state) => {
@@ -26,11 +27,14 @@ export const counterSlice = createSlice({
     },
     setVisible: (state, action) => {
       state.isVisible = action.payload
+    },
+    switchTheme: (state, action) => {
+      state.theme = action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, setWidth, setVisible } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, setWidth, setVisible, switchTheme } = counterSlice.actions
 
 export default counterSlice.reducer

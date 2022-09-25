@@ -65,36 +65,40 @@ const Resume = () => {
     }));
 
     return (
-        <div className="container-info" >
+        <Box className="container-info" sx={{bgcolor: 'background.default', color: 'text.primary'}}>
 
             <Grid container spacing={1}>
                 <Grid item xs={12} sm={12} md={12}>
-                    <div className="about" id="about" style={styles.about}>
+                    <Box  className="about" id="about" style={styles.about}>
                         <h2>resume</h2>
-                    </div>
+                    </Box>
                 </Grid>
                 <Grid item >
 
-                    <div className="resume" style={styles.resume}>
-                        <div className='resume-item'>
-                            <div className='edu'>
+                    <Box  className="resume" style={styles.resume}>
+                        <Box  className='resume-item'>
+                            <Box  className='edu'>
                                 <h3>EDUCATION</h3>
-                                <div className='education' style={styles.items}>
+                                <Box  className='education' style={styles.items}>
 
-                                    <div className='resume-education-items'>
-                                        <div className='years'><small>2009-2014</small></div>
-                                        <p><strong>Kherson National Technicial University</strong>
-                                            <br />
-                                            Computer systems and Networks (BSc. & MSc )</p>
-                                    </div>
-                                    <div className='resume-education-items'>
-                                        <div className='years'><small>2019-2022</small></div>
-                                        <p><strong>Computer academy STEP</strong>
-                                            <br />
-                                            Basic programming languages</p>
-                                    </div>
-                                </div>
-                            </div>
+                                    <Box  className='resume-education-items'>
+                                        <Box sx={{background: 'primary.main', backgroundColor: 'primary.main', color: 'text.primary'}} className='years'><small>2009-2014</small></Box>
+                                        <Box >
+                                            <p><strong>Kherson National Technicial University</strong>
+                                                <br />
+                                                Computer systems and Networks (BSc. & MSc )</p>
+                                        </Box>
+                                    </Box>
+                                    <Box  className='resume-education-items'>
+                                        <Box sx={{background: 'primary', backgroundColor: 'primary.main', color: 'text.primary'}} className='years'><small>2019-2022</small></Box>
+                                        <Box >
+                                            <p><strong>Computer academy STEP</strong>
+                                                <br />
+                                                Basic programming languages</p>
+                                        </Box>
+                                    </Box>
+                                </Box>
+                            </Box>
                             <Box className='lang'>
                                 <h3>LANGUAGES</h3>
 
@@ -122,11 +126,11 @@ const Resume = () => {
                                     </TabPanel>
                                 </Box>
                             </Box>
-                        </div>
+                        </Box>
                         <Divider variant="middle" />
                         <h3>EXPERIENCE</h3>
-                        <div className='experience'>
-                            <div className='years'><small>2017-2022</small></div>
+                        <Box  className='experience'>
+                            <Box sx={{background: 'primary', backgroundColor: 'primary.main', color: 'text.primary'}} className='years'><small>2017-2022</small></Box>
                             <p><strong>System Administrator</strong>
                                 <br />
                             </p>
@@ -139,11 +143,11 @@ const Resume = () => {
                                     configuration of peripheral
                                     devices</li>
                             </ul>
-                        </div>
-                    </div>
+                        </Box>
+                    </Box>
                 </Grid>
             </Grid>
-        </div>
+        </Box>
     )
 }
 

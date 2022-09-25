@@ -41,7 +41,7 @@ code {
   height: max-content;
   width: max-content;
   padding: 2px 14px;
-  background: #FDB82C;
+  /* background: #FDB82C; */
   border-radius: 10px;
   color: white;
   font-weight: 600;
@@ -103,11 +103,18 @@ code {
   display: none;
 }
 
+.switchTheme .MuiBox-root .css-0 {
+  width: 50%!important;
+}
+
+
+
 @media (max-width: 720px) {
   .main {
     display: flex!important;
     flex-direction: column;
     align-items: center;
+    height: 100%!important;
   }
   .MuiBottomNavigation-root .css-18vbpwz-MuiBottomNavigation-root{
     width: -webkit-fill-available!important;
@@ -145,5 +152,8 @@ code {
 
   .items {
     flex-direction: column;
+  }
+  .mainPageBox {
+    height: 100%!important;
   }
 }

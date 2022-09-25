@@ -38,13 +38,13 @@ const Portfolio = () => {
   }));
 
   return (
-    <Box className="container-info" >
+    <Box className="container-info" sx={{bgcolor: 'background.default', color: 'text.primary'}}>
       <Box className="about" id="about" style={styles.about}>
         <h2>portfolio</h2>
       </Box>
 
       <Box className="names" sx={{ padding: '10px 50px' }}>
-        <Link underline="hover" color="#FDB82C" variant='button'>
+        <Link underline="hover" color="warning.main" variant='button'>
           {'Web Development'}
         </Link>
       </Box>
@@ -81,7 +81,7 @@ const Portfolio = () => {
             </CardActionArea>
             <CardActions>
               <Tooltip title="The link will be opened on the new tab" placement="top">
-                <Button size="small" href="https://igorveremeyenko.github.io/" target="_blank" color='primary'>Check it</Button>
+                <Button size="small" href="https://igorveremeyenko.github.io/" target="_blank" color='warning'>Check it</Button>
               </Tooltip>
             </CardActions>
           </Card>
@@ -90,7 +90,7 @@ const Portfolio = () => {
               avatar={
                 <FontAwesomeIcon icon={faAngular} size="2x" color="red" />
               }
-              title="Made by Angular TS"
+              title="Made by Angular TS + Material UI"
               subheader="February, 2022"
             />
             <CardActionArea>
@@ -111,7 +111,7 @@ const Portfolio = () => {
             </CardActionArea>
             <CardActions>
               <Tooltip title="The link will be opened on the new tab" placement="top">
-                <Button size="small" href="https://igorveremiienko.neocities.org/" target="_blank" color='primary'>Check it</Button>
+                <Button size="small" href="https://igorveremiienko.neocities.org/" target="_blank" color='warning'>Check it</Button>
               </Tooltip>
             </CardActions>
           </Card>

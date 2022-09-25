@@ -42,7 +42,7 @@ export const Main = () => {
   };
 
   return (
-    <div className="main" id="main" style={styles.main}>
+    <Box  className="main" id="main" style={styles.main}>
       <LeftSideMenu />
       <Box>
           <Routes>
@@ -52,10 +52,12 @@ export const Main = () => {
             <Route path="/contact" element={<Contact />} />            
           </Routes>
       </Box>
-      <BottomNavigation sx={{ backgroundColor:'#FDB82C', height: '-webkit-fill-available', width: '-webkit-fill-available', gridColumn: '1 / 4' }} value={page} onChange={handleChange}>
+      {/* #FDB82C */}
+      <BottomNavigation sx={{ backgroundColor:'primary', height: '-webkit-fill-available', width: '-webkit-fill-available', gridColumn: '1 / 4' }} value={page} onChange={handleChange}>
       <BottomNavigationAction
         label="Home"
         value="home"
+       
         icon={<HomeIcon />        
       }
       />
@@ -76,7 +78,7 @@ export const Main = () => {
         icon={<ContactPageIcon />}
       />
     </BottomNavigation>
-    </div>
+    </Box>
   );
 }
 
@@ -96,7 +98,8 @@ const styles = {
     // background: 'floralwhite',
     gridTemplateColumns: '19rem 4fr',
     height: '100vh',
-    gridTemplateRows: '1fr'
+    gridTemplateRows: '1fr',
+    width: '-webkit-fill-available'
   },
   biographi: {
     padding: 40

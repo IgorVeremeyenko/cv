@@ -7,6 +7,8 @@ import Avatar from '@mui/material/Avatar';
 import { useState } from "react";
 import { useEffect } from "react";
 import { Box } from "@mui/system";
+import { useTheme } from "@mui/material/styles";
+import Typography from '@mui/material/Typography';
 
 export const StartPage = () => {
 
@@ -16,29 +18,30 @@ export const StartPage = () => {
       navigate("/main/about");
     }
 
+    const theme = useTheme();
 
     return (
-        <div style={styles.container}>
-            <div className="text" style={{backgroundColor: 'white', flex: 2, padding: '50px'}}>
-                <div className="avatar">
+        <Box className="mainPageBox" style={styles.container} sx={{bgcolor: 'background.default', color: 'text.primary'}}>
+            <Box className="text" style={{flex: 2, padding: '50px'}}>
+                <Box className="avatar">
                     <Avatar
                     alt="Igor Veremiienko"
                     src={photo}
                     sx={{ width: 220, height: 220 }}
                     />
-                    </div>
+                    </Box>
                 <p style={styles.text}> HI THERE!</p>
-                <p style={styles.textName}>I'M <span style={{ fontFamily: 'Alumni Sans Collegiate One, sans-serif', color: '#fdb82c', fontSize: '70px' }}>IGOR</span></p>
-                <span style={{ fontSize: '24px', padding: '1px 10px', borderRadius: '5px', backgroundColor: '#fdb82c' }}>Software Engineer / System Administrator</span>
+                <p style={styles.textName}>I'M <Typography variant="caption" sx={{ fontFamily: 'Alumni Sans Collegiate One, sans-serif', color: 'primary.main', fontSize: '70px' }}>IGOR</Typography></p>
+                <Typography sx={{ fontSize: '24px', padding: '1px 10px', borderRadius: '5px', background: 'primary', backgroundColor: 'primary.main' }}>Software Engineer / System Administrator</Typography>
                 <p>I am a system administrator with 5 years of experience. My main focus is the configuration and maintenance of networks and software. I also took web programming courses as I enjoy web application development. I work diligently on the tasks assigned to me and successfully complete them. </p>
                 <ThemeProvider theme={theme}>
-                    <Button variant="contained" color="neutoral" sx={{ borderRadius: '30px', color: 'white' }} onClick={goAbout}>MORE ABOUT ME</Button>
+                    <Button variant="contained" color="primary" sx={{ borderRadius: '30px', color: 'white', marginBottom: 5 }} onClick={goAbout}>MORE ABOUT ME</Button>
                 </ThemeProvider>
-            </div>
+            </Box>
             <Box className="imageProfile"  id="imageProfile" sx={{width: '50%'}}>
                 <ImageProfile />
             </Box>
-        </div>
+        </Box>
     )
 }
 
@@ -63,10 +66,10 @@ const styles = {
     }
 }
 
-const theme = createTheme({
-    palette: {      
-      neutoral: {
-        main: '#fdb82c'
-      }
-    },
-  });
+// const theme = createTheme({
+//     palette: {      
+//       neutoral: {
+//         main: '#fdb82c'
+//       }
+//     },
+//   });

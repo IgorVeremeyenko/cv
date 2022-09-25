@@ -8,7 +8,7 @@ import {
 import { Main } from "./pages/Main";
 import { Portfolio } from "./pages/Portfolio";
 import { StartPage } from "./pages/StartPage";
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group';
 import App from "../App";
 import AboutMe from "./pages/AboutMe";
 

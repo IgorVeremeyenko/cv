@@ -1,11 +1,12 @@
-import computer from '../../assets/img/computer.svg'
-import phone from '../../assets/img/phone.svg'
+import { ReactComponent as Computer } from '../../assets/img/computer.svg'
 import Link from '@mui/material/Link';
 import { Grid } from '@mui/material';
 import { Stack } from '@mui/system';
 import { Divider } from '@mui/material';
 import {Box} from '@mui/system';
 import { useEffect } from 'react';
+import SvgIcon from '@mui/material/SvgIcon';
+import { ReactComponent as Phone } from '../../assets/img/phone.svg';
 
 const Contact = () => {
   function scrollView() {
@@ -17,20 +18,20 @@ const Contact = () => {
       scrollView()
     },[])
   return (
-    <>
+    <Box sx={{bgcolor: 'background.default', color: 'text.primary'}}>
 
       <Grid container spacing={3}>
         <Grid item xs={12} md={12}>
-          <div className="about" id='contact' style={styles.about}>
+          <Box  className="about" id='contact' style={styles.about}>
             <h2>contact</h2>
-          </div>
+          </Box>
         </Grid >
         <Grid item xs={12} md={12}>
-          <div className="biographi" style={styles.biographi}>
+          <Box  className="biographi" style={styles.biographi}>
             <p className='namesOfParagraphs'>Feel <strong>free</strong> to contact me.</p>
             <br />
             <p className='paragraphs'>I am free to communicate at any time of the day. I will be glad to any communication</p>
-          </div>
+          </Box>
         </Grid>        
       </Grid>
           <Stack
@@ -40,29 +41,34 @@ const Contact = () => {
             sx={{marginBottom: 5, paddingLeft: 5}}
           >
             <Box>
-              <div className="mail">
-                <img src={computer} alt="email" width={100} height={100}></img>
-                <span>Email: </span>
-                <Link href="mailto:viruscomp7@gmail.com" underline="none">
-                  {'viruscomp7@gmail.com'}
-                </Link>
-              </div>
+              <Box  className="mail">
+                <Computer height={100} width={100} fill='currentColor'/>                
+                <Box  style={{display: 'flex', flexDirection: 'column'}}>
+                  <span>Email: </span>
+                  <Link href="mailto:viruscomp7@gmail.com" underline="none">
+                    {'viruscomp7@gmail.com'}
+                  </Link>
+                </Box>
+              </Box>
             </Box>
             <Box>
-              <div className="phone">
-                <img src={phone} alt="phone" width={100} height={100}></img>
-                <Link href="tel:+496170961709" underline="none">
-                  {'Call me, anytime +48 451 552 506'}
-                </Link>
-              </div>
+              <Box  className="phone">
+                <Phone height={100} width={100} fill='currentColor'/>
+                <Box  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                  <span>Call me, anytime</span>
+                  <Link href="tel:+496170961709" underline="none">
+                    {'+48 451 552 506'}
+                  </Link>
+                </Box>
+              </Box>
             </Box>
           </Stack>
-      <div className="container-info" style={{ flex: 2 }}>
-        <div style={{ textAlign: 'center', marginTop: 5 }}>
+      <Box  className="container-info" style={{ flex: 2 }}>
+        <Box  style={{ textAlign: 'center', margin: 0, padding: 5 }}>
           <h2 style={{ textTransform: 'uppercase' }}>thanks for patience!</h2>
-        </div>
-      </div>
-    </>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 

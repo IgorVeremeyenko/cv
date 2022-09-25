@@ -19,39 +19,39 @@ const AboutMe = () => {
     },[])
 
     return (
-        <div className="container-info" style={{ flex: 2 }}>
-        <div className="about" id="about" style={styles.about}>
+        <Box className="container-info" sx={{bgcolor: 'background.default', color: 'text.primary', flex: 2}}>
+        <Box  className="about" id="about" style={styles.about}>
           <h2>about me</h2>
-        </div>
-        <div className="biographi" style={styles.biographi}>
-          <div style={{fontSize: '24px'}}>I'm <strong>Igor Veremiienko</strong>, Software Engineer</div>
+        </Box>
+        <Box className="biographi" style={styles.biographi}>
+          <Box  style={{fontSize: '24px'}}>I'm <strong>Igor Veremiienko</strong>, Software Engineer</Box>
           <p>I can't imagine my life without a computer. I won’t say that I am an avid programmer, but I can only work hard at a computer.</p>
-          <div className="options">
+          <Box className="options">
             <h3>What I do?</h3>
-            <div className="items" style={styles.items}>
+            <Box className="items" style={styles.items}>
               <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 <Grid item sm={8} md={12}> 
-                  <div className="biographi-todos">
+                  <Box  className="biographi-todos">
                     <img src={network} width={40} height={40} />
                     <h4>System Administrator</h4>
                     <p>I keep the network in a good condition, install programms and serve printers</p>
-                  </div>
+                  </Box>
                 </Grid>
               </Grid>
               <Divider orientation="vertical" variant="middle" flexItem sx={{margin: '30px'}}/>
               <Grid item sm={8} md={12}>
-                <div className="biographi-todos">
+                <Box  className="biographi-todos">
                   <img src={web} width={40} height={40} />
                   <h4>Web development</h4>
                   <p>Easy applications to calculate and accounting data</p>
-                </div>
+                </Box>
               </Grid>
               <Box>
               </Box>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Box >
+          </Box >
+        </Box >
+      </Box>
     )
 }
 
