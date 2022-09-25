@@ -34,7 +34,7 @@ export const LeftSideMenu = () => {
             </div>
             <div className="social">
                 <h3>Social Follow</h3>
-                <div class="social-container">                
+                <div className="social-container">                
                     <a href="https://www.facebook.com/profile.php?id=100008083928382"
                         className="facebook social" target="_blank">
                         <FontAwesomeIcon icon={faFacebook} size="2x" color={color1} onMouseEnter={changeColor1} onMouseLeave={resetColor}/>

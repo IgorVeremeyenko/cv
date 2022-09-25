@@ -9,7 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: floralwhite; */
+  background: #F5F5F5;
+  scroll-behavior: smooth;
 }
 
 body:not(.mail) {
@@ -75,6 +76,11 @@ code {
   padding: 20px;
 }
 
+.resume {
+  padding: 0px 0px 0px 40px!important;
+  margin-top: -50px;
+}
+
 .social {
   display: flex;
   flex-direction: column;
@@ -84,4 +90,60 @@ code {
 .observable {
   display: flex;
   justify-content: space-around;
+  
+  margin-left: 20px;
+
+}
+
+.MuiTabs-scrollButtons.Mui-disabled {
+  opacity: 0.3;
+}
+
+.avatar {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .main {
+    display: flex!important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .MuiBottomNavigation-root .css-18vbpwz-MuiBottomNavigation-root{
+    width: -webkit-fill-available!important;
+  }
+
+  .photo {
+    width: 100%!important;
+    height: 500px!important;
+  }
+
+  .container {
+    width: -webkit-fill-available;
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: row;
+    row-gap: 20px;
+    padding: 20px;
+    column-gap: 20px;
+  }
+
+  .css-5m2iln-MuiStack-root {
+    padding-right: 0!important;
+  }
+
+  .imageProfile {
+    display: none;
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .items {
+    flex-direction: column;
+  }
 }

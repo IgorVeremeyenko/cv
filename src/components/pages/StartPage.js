@@ -2,6 +2,11 @@ import { Button } from "@mui/material"
 import { ImageProfile } from "../ImageProfile"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
+import photo from '../../assets/img/photo.jpg'
+import Avatar from '@mui/material/Avatar';
+import { useState } from "react";
+import { useEffect } from "react";
+import { Box } from "@mui/system";
 
 export const StartPage = () => {
 
@@ -11,9 +16,17 @@ export const StartPage = () => {
       navigate("/main/about");
     }
 
+
     return (
         <div style={styles.container}>
             <div className="text" style={{backgroundColor: 'white', flex: 2, padding: '50px'}}>
+                <div className="avatar">
+                    <Avatar
+                    alt="Igor Veremiienko"
+                    src={photo}
+                    sx={{ width: 220, height: 220 }}
+                    />
+                    </div>
                 <p style={styles.text}> HI THERE!</p>
                 <p style={styles.textName}>I'M <span style={{ fontFamily: 'Alumni Sans Collegiate One, sans-serif', color: '#fdb82c', fontSize: '70px' }}>IGOR</span></p>
                 <span style={{ fontSize: '24px', padding: '1px 10px', borderRadius: '5px', backgroundColor: '#fdb82c' }}>Software Engineer / System Administrator</span>
@@ -22,7 +35,9 @@ export const StartPage = () => {
                     <Button variant="contained" color="neutoral" sx={{ borderRadius: '30px', color: 'white' }} onClick={goAbout}>MORE ABOUT ME</Button>
                 </ThemeProvider>
             </div>
-            <ImageProfile/>
+            <Box className="imageProfile"  id="imageProfile" sx={{width: '50%'}}>
+                <ImageProfile />
+            </Box>
         </div>
     )
 }

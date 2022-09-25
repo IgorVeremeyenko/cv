@@ -42,7 +42,7 @@ export const Main = () => {
   };
 
   return (
-    <div className="main" style={styles.main}>
+    <div className="main" id="main" style={styles.main}>
       <LeftSideMenu />
       <Box>
           <Routes>
@@ -52,7 +52,7 @@ export const Main = () => {
             <Route path="/contact" element={<Contact />} />            
           </Routes>
       </Box>
-      <BottomNavigation sx={{ backgroundColor:'#FDB82C', height: '-webkit-fill-available', gridColumn: '1 / 4' }} value={page} onChange={handleChange}>
+      <BottomNavigation sx={{ backgroundColor:'#FDB82C', height: '-webkit-fill-available', width: '-webkit-fill-available', gridColumn: '1 / 4' }} value={page} onChange={handleChange}>
       <BottomNavigationAction
         label="Home"
         value="home"

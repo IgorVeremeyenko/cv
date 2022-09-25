@@ -1,19 +1,19 @@
 import { StartPage } from './components/pages/StartPage';
 import { Menu } from './components/Menu';
-import { Box, Paper } from '@mui/material';
+import { Box, Grid, Paper } from '@mui/material';
 import Image from './assets/img/background-image.jpg';
 import MyRoutes from './components/MyRoutes';
 
 function App() {
   
   return (
-    
-    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-      <MyRoutes/>
-      {/* <Paper sx={{ background: `url(${Image})`, height: '100vh', position: 'fixed', backgroundRepeat: 'round', width: '100%', top: 0, zIndex: -10 }}>
-      </Paper> */}
-      {/* <Menu /> */}
-    </Box>
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={12}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <MyRoutes/>          
+        </Box>
+      </Grid>
+    </Grid>
   )
 }
 
