@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import momentum from '../../assets/img/momentum.png';
 import exchange from '../../assets/img/exchange.png';
+import minimus from '../../assets/img/minimus.png';
 import Tooltip from '@mui/material/Tooltip';
 import { CardActionArea,Divider,Grid } from '@mui/material';
 import { faAngular,faHtml5 } from '@fortawesome/free-brands-svg-icons';
@@ -115,6 +116,38 @@ const Portfolio = () => {
               </Tooltip>
             </CardActions>
           </Card>
+
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader
+              avatar={
+                <FontAwesomeIcon icon={faAngular} size="2x" color="red" />
+              }
+              title="Angular TS/Prime NG/Firebase"
+              subheader="November, 2022"
+            />
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image={minimus}
+                alt="Minimus"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="Box">
+                  Minimus
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Weather daily forecast for 7 days. The application is using different APIs... with different datas:) Because of they are free to pay!
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Tooltip title="The link will be opened on the new tab" placement="top">
+                <Button size="small" href="https://minimus.gopr-service.com.ua/" target="_blank" color='warning'>Check it</Button>
+              </Tooltip>
+            </CardActions>
+          </Card>
+
         </Stack>
       </Box>
     </Box>

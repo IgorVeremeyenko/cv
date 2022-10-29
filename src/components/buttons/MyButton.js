@@ -9,6 +9,8 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useSelector, useDispatch } from 'react-redux';
 import { switchTheme } from '../../counterSlice';
+import { ReactComponent as Light } from '../../assets/img/light.svg';
+import { ReactComponent as Dark } from '../../assets/img/dark.svg';
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -50,7 +52,7 @@ export default function MyButton() {
                 justifyContent: 'space-evenly;'
             }}
         >
-            <span><strong>Theme:</strong> </span>
+            <span></span>
             <ToggleButtonGroup
                 color="primary"
                 value={alignment}
@@ -58,8 +60,12 @@ export default function MyButton() {
                 onChange={handleChange}
                 aria-label="Platform"
             >
-                <ToggleButton value="light" >Light</ToggleButton>
-                <ToggleButton value="dark" >Dark</ToggleButton>
+                <ToggleButton value="light" >
+                    <Light height={35} width={35} fill='currentColor'/>
+                </ToggleButton>
+                <ToggleButton value="dark" >
+                    <Dark height={35} width={35} fill='currentColor'/>
+                </ToggleButton>
             </ToggleButtonGroup>
             {/* <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}

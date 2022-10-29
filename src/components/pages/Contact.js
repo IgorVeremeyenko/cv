@@ -18,7 +18,7 @@ const Contact = () => {
       scrollView()
     },[])
   return (
-    <Box sx={{bgcolor: 'background.default', color: 'text.primary'}}>
+    <Box sx={{bgcolor: 'background.default', color: 'text.primary', '@media (max-width: 720px)': {marginTop: '5px'}}}>
 
       <Grid container spacing={3}>
         <Grid item xs={12} md={12}>

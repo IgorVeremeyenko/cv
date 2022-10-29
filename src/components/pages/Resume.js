@@ -15,14 +15,14 @@ import { useEffect } from 'react';
 
 function TabPanel(props) {
     const { children,value,index,...other } = props;
-
+    
     function scrollView() {
         const about = document.getElementById("about");
         about.scrollIntoView({ behavior: "smooth" });
       }
        
         useEffect(() => {
-          scrollView()
+          scrollView()          
         },[])
     return (
         <Box
@@ -49,12 +49,21 @@ function a11yProps(index) {
 }
 
 const Resume = () => {
+    const [matches, setMatches] = useState(
+        window.matchMedia("(max-width: 420px)").matches
+      )
 
     const [value,setValue] = useState(0);
 
     const handleChange = (event,newValue) => {
         setValue(newValue);
     };
+
+    useEffect(() => {
+        window
+        .matchMedia("(max-width: 420px)")
+        .addEventListener('change', e => setMatches( e.matches ));
+      }, []);
 
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -102,7 +111,11 @@ const Resume = () => {
                             <Box className='lang'>
                                 <h3>LANGUAGES</h3>
 
-                                <Box sx={{ maxWidth: '100%',borderColor: 'divider' }}>
+                                <Box sx={{ borderColor: 'divider', '@media screen and (man-width: 420px)': {
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center'
+                                        },}}>
                                     <Tabs
                                         value={value}
                                         onChange={handleChange}
@@ -110,6 +123,7 @@ const Resume = () => {
                                         scrollButtons
                                         allowScrollButtonsMobile
                                         aria-label="languages tabs"
+                                        sx={matches ? {width: '200px', paddingLeft: '20%'} : 'auto'}
                                     >
                                         <Tab wrapped label="English" {...a11yProps(0)} />
                                         <Tab wrapped label="Українська" {...a11yProps(1)} />
@@ -170,7 +184,8 @@ const styles = {
     },
     items: {
         display: 'flex',
-        columnGap: '40px'
+        columnGap: '40px',
+        flexWrap: 'wrap'
     }
 
 }

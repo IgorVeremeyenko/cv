@@ -6,7 +6,7 @@ export const counterSlice = createSlice({
     value: 0,
     width: false,
     isVisible: false,
-    theme: 'light'
+    theme: localStorage.getItem('theme') === null ? 'light' : localStorage.getItem('theme')
   },
   reducers: {
     increment: (state) => {
@@ -30,6 +30,7 @@ export const counterSlice = createSlice({
     },
     switchTheme: (state, action) => {
       state.theme = action.payload
+      localStorage.setItem('theme', action.payload)
     }
   },
 })

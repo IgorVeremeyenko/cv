@@ -16,7 +16,7 @@ export const LeftSideMenu = () => {
     const theme = useTheme();
     let value = useSelector((state) => state.counter.theme);
     const dispatcher = useDispatch();
-    const [color1, setColor1] = useState(null);
+    const [color1, setColor1] = useState(() => value === 'light' ? theme.palette.primary.main : theme.palette.primary);
     const [color2, setColor2] = useState(() => value === 'light' ? theme.palette.primary.main : theme.palette.primary);
     const [color3, setColor3] = useState(() => value === 'light' ? theme.palette.primary.main : theme.palette.primary);
     const changeColor1 = () => {
@@ -39,14 +39,14 @@ export const LeftSideMenu = () => {
         setColor1(() => value === 'light' ? theme.palette.primary.main : theme.palette.primary.main)
         setColor2(() => value === 'light' ? theme.palette.primary.main : theme.palette.primary.main)
         setColor3(() => value === 'light' ? theme.palette.primary.main : theme.palette.primary.main)
-    })
+    }, [theme])
    
     return (
         <Box  className="container" sx={{bgcolor: 'background.default', color: 'text.primary'}}>
             <Box  className="photo" style={styles.photo}>
                 <ImageProfile />
             </Box>
-            <Box className="switchTheme" sx={{width: '50%'}}>
+            <Box className="switchTheme" sx={{paddingRight: '3rem'}}>
                  <MyButton/>
             </Box>
             <Box  className="social">
@@ -54,7 +54,13 @@ export const LeftSideMenu = () => {
                 <Box  className="social-container">                
                     <a href="https://www.facebook.com/profile.php?id=100008083928382"
                         className="facebook social" target="_blank">
-                        <FontAwesomeIcon icon={faFacebook} size="2x" className="iconAwesome1" color={color1} onMouseEnter={changeColor1} onMouseLeave={resetColor}/>
+                        <FontAwesomeIcon icon={faFacebook} size="2x" color={color1} onMouseEnter={changeColor1} onMouseLeave={resetColor}
+                        sx={(color1) => ({
+                            '&:hover':
+                            {color: 'red'},
+                            color: color1
+                          })}
+                        />
                         
                     </a>
                     <a href="https://www.instagram.com/igor_veremeyenko/"

@@ -8,14 +8,17 @@ import MyButton from './components/buttons/MyButton';
 import { useMemo, useState, useContext, createContext } from 'react';
 import { ColorModeContext } from './components/buttons/MyButton';
 import { amber, grey, deepOrange, blueGrey } from '@mui/material/colors';
+import counterSlice from './counterSlice';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const [mode, setMode] = useState('light');
+  let colorTheme = useSelector((state) => state.counter.theme);
+  const [mode, setMode] = useState(colorTheme);
   const colorMode = useMemo(
     () => ({
-      toggleColorMode: (value: string) => {
+      toggleColorMode: (colorTheme) => {
         // setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-        switch(value){
+        switch(colorTheme){
           case 'light': setMode('light');
           break;
           case 'dark' : setMode('dark');

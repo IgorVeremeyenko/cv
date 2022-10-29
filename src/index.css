@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,6 +15,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #F5F5F5;
   scroll-behavior: smooth;
+  /* min-width: 409px; */
+  overflow-x: hidden;
 }
 
 body:not(.mail) {
@@ -91,7 +97,7 @@ code {
   display: flex;
   justify-content: space-around;
   
-  margin-left: 20px;
+  margin-left: 3rem;
 
 }
 
@@ -103,8 +109,13 @@ code {
   display: none;
 }
 
+.MuiBox-root .css-1ci0u12, .css-9kauk {
+  justify-content: center!important;
+  
+}
+
 .switchTheme .MuiBox-root .css-0 {
-  width: 50%!important;
+  padding-right: 3rem!important;
 }
 
 
@@ -155,5 +166,11 @@ code {
   }
   .mainPageBox {
     height: 100%!important;
+  }
+}
+
+@media (max-width: 420px){
+  .MuiTabs-root .css-tkn350-MuiTabs-root{
+    width: 200px!important;
   }
 }

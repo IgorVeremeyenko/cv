@@ -1,11 +1,9 @@
 import { Button } from "@mui/material"
 import { ImageProfile } from "../ImageProfile"
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
 import photo from '../../assets/img/photo.jpg'
 import Avatar from '@mui/material/Avatar';
-import { useState } from "react";
-import { useEffect } from "react";
 import { Box } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import Typography from '@mui/material/Typography';
@@ -33,7 +31,7 @@ export const StartPage = () => {
                 <p style={styles.text}> HI THERE!</p>
                 <p style={styles.textName}>I'M <Typography variant="caption" sx={{ fontFamily: 'Alumni Sans Collegiate One, sans-serif', color: 'primary.main', fontSize: '70px' }}>IGOR</Typography></p>
                 <Typography sx={{ fontSize: '24px', padding: '1px 10px', borderRadius: '5px', background: 'primary', backgroundColor: 'primary.main' }}>Software Engineer / System Administrator</Typography>
-                <p>I am a system administrator with 5 years of experience. My main focus is the configuration and maintenance of networks and software. I also took web programming courses as I enjoy web application development. I work diligently on the tasks assigned to me and successfully complete them. </p>
+                <p>I am a system administrator with 5 years of experience. While learning programming languages, I found that Frontend is the most interesting for me. Now I'm looking for a job opportunity at this direction. </p>
                 <ThemeProvider theme={theme}>
                     <Button variant="contained" color="primary" sx={{ borderRadius: '30px', color: 'white', marginBottom: 5 }} onClick={goAbout}>MORE ABOUT ME</Button>
                 </ThemeProvider>
