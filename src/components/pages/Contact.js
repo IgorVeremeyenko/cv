@@ -45,8 +45,8 @@ const Contact = () => {
                 <Computer height={100} width={100} fill='currentColor'/>                
                 <Box  style={{display: 'flex', flexDirection: 'column'}}>
                   <span>Email: </span>
-                  <Link href="mailto:viruscomp7@gmail.com" underline="none">
-                    {'viruscomp7@gmail.com'}
+                  <Link href="mailto:i.veremiienko@gmail.com" underline="none">
+                    {'i.veremiienko@gmail.com'}
                   </Link>
                 </Box>
               </Box>
@@ -56,8 +56,8 @@ const Contact = () => {
                 <Phone height={100} width={100} fill='currentColor'/>
                 <Box  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                   <span>Call me, anytime</span>
-                  <Link href="tel:+496170961709" underline="none">
-                    {'+48 451 552 506'}
+                  <Link href="tel:+4916092427733" underline="none">
+                    {'+49 160 9242 7733'}
                   </Link>
                 </Box>
               </Box>
